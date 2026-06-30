@@ -42,21 +42,25 @@ class PlayerScreen extends StatelessWidget {
                       ],
                     ),
                     const Spacer(),
-                    Container(
-                      width: double.infinity,
+                    ConstrainedBox(
                       constraints: const BoxConstraints(maxWidth: 430),
-                      aspectRatio: 1,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(48),
-                        gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Colors.white.withOpacity(0.24), Colors.white.withOpacity(0.05)]),
-                        border: Border.all(color: Colors.white.withOpacity(0.2)),
-                        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.22), blurRadius: 60, offset: const Offset(0, 34))],
-                      ),
-                      child: Stack(
-                        children: [
-                          Positioned.fill(child: CustomPaint(painter: _OrbPainter(progress: controller.progress))),
-                          const Center(child: Icon(Icons.spa_rounded, color: Colors.white, size: 96)),
-                        ],
+                      child: AspectRatio(
+                        aspectRatio: 1,
+                        child: Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(48),
+                            gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Colors.white.withOpacity(0.24), Colors.white.withOpacity(0.05)]),
+                            border: Border.all(color: Colors.white.withOpacity(0.2)),
+                            boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.22), blurRadius: 60, offset: const Offset(0, 34))],
+                          ),
+                          child: Stack(
+                            children: [
+                              Positioned.fill(child: CustomPaint(painter: _OrbPainter(progress: controller.progress))),
+                              const Center(child: Icon(Icons.spa_rounded, color: Colors.white, size: 96)),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                     const Spacer(),

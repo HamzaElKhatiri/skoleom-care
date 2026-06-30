@@ -56,7 +56,7 @@ class AppTheme {
           textStyle: GoogleFonts.poppins(fontWeight: FontWeight.w800),
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: 0,
         color: card,
         surfaceTintColor: Colors.transparent,
